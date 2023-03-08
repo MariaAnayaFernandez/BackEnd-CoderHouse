@@ -4,6 +4,9 @@ import ProductManager from './ProductManager.js';
 const app = express();
 const productManager = new ProductManager('./productos1.json')
 
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 
 // Endponit general
 app.get('/', (req, res)=>{
